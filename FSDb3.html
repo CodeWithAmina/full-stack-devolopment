@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Zoom & Disable Right Click</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f4ea; /* light green background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        h2 {
+            color: #2f6f3f;
+            margin-bottom: 30px;
+        }
+
+        .zoom-container {
+            overflow: hidden;
+            width: 350px;
+            height: 250px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+
+        .zoom-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* maintain image ratio */
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            border-radius: 12px;
+        }
+
+        /* Zoom effect on hover */
+        .zoom-container:hover img {
+            transform: scale(1.2); /* zoom in 20% */
+            box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Green-Themed Image Zoom</h2>
+
+    <div class="zoom-container">
+        <!-- Replace this URL with your own image if you want -->
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8Z3JlZW4lMjBiYWNrZ3JvdW5kfHx8fHx8MTY5OTQ0MzY0Mg&ixlib=rb-4.0.3&q=80&w=400" alt="Green Nature Image">
+    </div>
+
+    <script>
+        // Disable right-click on the entire webpage
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert("Right-click is disabled on this page!");
+        });
+    </script>
+
+</body>
+</html>

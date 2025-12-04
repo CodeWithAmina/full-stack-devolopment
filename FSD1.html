@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Horizontal Scroll Snap - Green Theme</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f4ea; /* light green background */
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #2f6f3f; /* dark green heading */
+            text-align: center;
+        }
+
+        /* Outer container with horizontal scroll */
+        .scroll-container {
+            width: 100%;
+            overflow-x: auto;
+            display: flex;
+            scroll-snap-type: x mandatory;
+            gap: 20px;               /* more space between items */
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #2f6f3f; 
+            background: #d4edda;      /* soft green background */
+            white-space: nowrap;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Each box inside */
+        .item {
+            flex: 0 0 auto;
+            width: 220px;           /* slightly wider */
+            height: 160px;
+            background: #4CAF50;    /* green color */
+            color: white;
+            border-radius: 10px;
+            border: 2px solid #2e7d32;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+            scroll-snap-align: start;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        /* Hover effect */
+        .item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Green Horizontal Scroll with Snap</h2>
+
+    <div class="scroll-container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+        <div class="item">Item 6</div>
+        <div class="item">Item 7</div>
+        <div class="item">Item 8</div>
+        <div class="item">Item 9</div>
+        <div class="item">Item 10</div>
+    </div>
+
+</body>
+</html>
